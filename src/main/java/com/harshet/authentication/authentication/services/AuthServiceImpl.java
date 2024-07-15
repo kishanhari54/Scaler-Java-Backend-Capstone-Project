@@ -45,7 +45,7 @@ public class AuthServiceImpl implements AuthService {
         }
 
         if (sessionRepository.findByUser(user).size() >= 5) {
-            throw new SessionsExceededException();
+            throw new SessionsExceededException("User Sessions Limit Exceeded");
         }
 
         String token = Jwts.builder()

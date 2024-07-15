@@ -27,7 +27,7 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(SessionsExceededException.class)
     protected ResponseEntity<Object> handleSessionsExceeded(SessionsExceededException ex) {
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Sessions exceeded");
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(ex.getMessage());
     }
 
     @ExceptionHandler(SessionNotFoundException.class)
