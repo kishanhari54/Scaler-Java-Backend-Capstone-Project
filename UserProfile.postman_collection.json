@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "1620ab12-8535-40ad-b6e0-83ee046288f7",
+		"name": "UserProfile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28207859"
+	},
+	"item": [
+		{
+			"name": "Create A User Profile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kishanhari\",\r\n    \"firstName\":\"Hari\",\r\n    \"lastName\":\"Kishan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/profiles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create A User Profile Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"thriller22\",\r\n    \"firstName\":\"Adam\",\r\n    \"lastName\":\"Walkers\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/profiles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a User Profile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kishanhari\",\r\n    \"firstName\":\"Hari\",\r\n    \"lastName\":\"Kishan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/profiles/kishanhari",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"profiles",
+						"kishanhari"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all User Profiles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kishanhari\",\r\n    \"firstName\":\"Hari\",\r\n    \"lastName\":\"Kishan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/profiles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Connection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/connections/kishanhari/thriller22",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"connections",
+						"kishanhari",
+						"thriller22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Connections",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"kishanhari\",\r\n    \"firstName\":\"Hari\",\r\n    \"lastName\":\"Kishan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/connections/thriller22",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"connections",
+						"thriller22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Connection Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Active\r\n   ",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/connections/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"connections",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080"
+		}
+	]
+}
