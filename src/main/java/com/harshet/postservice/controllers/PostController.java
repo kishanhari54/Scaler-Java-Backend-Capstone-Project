@@ -1,8 +1,12 @@
 package com.harshet.postservice.controllers;
 
+
+import com.harshet.postservice.client.UserProfileClient;
 import com.harshet.postservice.models.Post;
 import com.harshet.postservice.services.PostServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +20,16 @@ public class PostController {
 
     @Autowired
     private PostServiceImpl postService;
-
+    @Autowired
+    private UserProfileClient userProfileClient;
     @PostMapping
     public Post createPost(@RequestBody Post post) {
+        if (!userProfileClient.checkUserExists(post.getUserId())) {
+            return null;
+        }
         return postService.createPost(post);
+
+
     }
 
     @PutMapping("/{postId}")
