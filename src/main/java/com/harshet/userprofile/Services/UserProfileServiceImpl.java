@@ -28,7 +28,10 @@ public class UserProfileServiceImpl {
         return profile.get();
     }
 
+    public boolean checkUserExist(Long userId) {
+        return userProfileRepository.existsById(userId);
 
+    }
     public List<UserProfile> getAllUserProfiles() {
         return userProfileRepository.findAll();
     }

@@ -27,4 +27,9 @@ public class UserProfileController {
     public List<UserProfile> getAllUserProfiles() {
         return userProfileService.getAllUserProfiles();
     }
+
+    @GetMapping("/check")
+    public boolean checkUserExists(@RequestParam("userId") Long userId) {
+        return userProfileService.checkUserExist(userId);
+    }
 }
